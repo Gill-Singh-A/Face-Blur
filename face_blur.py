@@ -79,7 +79,7 @@ if __name__ == "__main__":
             faces = detect_faces(frame, face_classifier, data.scale_factor, data.min_neighbors, localize=True)
             for face in faces:
                 x, y, w, h = face
-                frame[y:y+h, x:x+w] = cv2.GaussianBlur(frame[y:y+h, x:x+w], (199, 199), 0)
+                frame[y:y+h, x:x+w] = cv2.GaussianBlur(frame[y:y+h, x:x+w], (49, 49), 0)
             print(f"\r{Fore.CYAN}{Back.MAGENTA}{len(faces)}{Back.RESET} {Fore.GREEN}Faces Detected{Fore.RESET}", end='')
             cv2.imshow("Camera", frame)
         video_capture.release()
